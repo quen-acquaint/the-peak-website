@@ -527,6 +527,25 @@ body {
     transform: translateY(-5px);
 }
 
+.menu-image {
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 4/3;
+}
+
+.menu-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: var(--transition);
+}
+
+.menu-item:hover .menu-image img {
+    transform: scale(1.05);
+}
+
 .menu-image .image-placeholder {
     width: 100%;
     height: 280px;
