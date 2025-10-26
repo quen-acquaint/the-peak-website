@@ -1,0 +1,1 @@
+We are continuing this project please read the codebase, instruction files, claude.md file, and the activity log and prepare yourself to continue.
