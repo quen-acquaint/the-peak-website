@@ -87,11 +87,11 @@ body {
 }
 
 .logo-text {
-    font-family: var(--font-heading);
+    font-family: 'Montserrat', sans-serif;
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 2px;
-    color: var(--primary-color);
+    color: #292929;
 }
 
 .nav-menu {
@@ -167,9 +167,36 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #E85D55 0%, #d34740 100%);
     overflow: hidden;
 }
+
+/* Blurred Video Background Layer - extends to edges */
+.hero-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%) scale(1.5);
+    object-fit: cover;
+    filter: blur(50px) brightness(0.5);
+    z-index: 0;
+}
+
+/* Main Video Layer - crisp center */
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%) scale(1.3);
+    object-fit: cover;
+    z-index: 1;
+    mask-image: radial-gradient(ellipse 70% 60% at center, black 40%, transparent 85%);
+    -webkit-mask-image: radial-gradient(ellipse 70% 60% at center, black 40%, transparent 85%);
+}
+
 
 .hero-overlay {
     position: absolute;
@@ -177,14 +204,13 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23E85D55" width="1200" height="600"/><g fill-opacity="0.05"><circle fill="white" cx="200" cy="100" r="80"/><circle fill="white" cx="800" cy="400" r="100"/><circle fill="white" cx="1000" cy="200" r="60"/></g></svg>');
-    background-size: cover;
-    opacity: 0.3;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
 }
 
 .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     text-align: center;
     color: var(--white);
     max-width: 900px;
@@ -270,7 +296,7 @@ body {
     transform: translateX(-50%);
     text-align: center;
     color: var(--white);
-    z-index: 2;
+    z-index: 3;
 }
 
 .scroll-indicator span {
@@ -664,6 +690,19 @@ body {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+}
+
+.visit-map {
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.visit-map iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 .visit-map .image-placeholder {
