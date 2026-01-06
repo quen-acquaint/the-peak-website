@@ -7,23 +7,25 @@
     <meta name="description" content="Experience Sydney's most authentic Cha Chaan Teng. Traditional Hong Kong cafe serving fresh, heritage-style dishes in the heart of Sydney.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
+            <ul class="nav-menu-left">
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#heritage">Heritage</a></li>
+                <li><a href="#menu">Menu</a></li>
+            </ul>
             <div class="logo">
                 <img src="logo.png" alt="The Peak Hong Kong Cafe Logo" class="logo-image">
                 <span class="logo-text">THE PEAK</span>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#story">Our Story</a></li>
-                <li><a href="#heritage">Heritage</a></li>
-                <li><a href="#menu">Menu</a></li>
-                <li><a href="#visit" class="cta-button">Visit Us</a></li>
-            </ul>
+            <div class="nav-menu-right">
+                <a href="#visit" class="cta-button">Visit Us</a>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -34,14 +36,9 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <video class="hero-video-bg" autoplay muted loop playsinline>
-            <source src="videos/ThePeak.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <video class="hero-video" autoplay muted loop playsinline>
-            <source src="videos/ThePeak.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <div class="hero-image-bg">
+            <img src="images/ThePeakHero.jpg" alt="The Peak Hong Kong Cafe">
+        </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <span class="hero-subtitle">Sydney's Most Authentic</span>
@@ -51,6 +48,11 @@
                 <a href="#menu" class="btn btn-primary">Explore Our Menu</a>
                 <a href="#visit" class="btn btn-secondary">Find Us</a>
             </div>
+        </div>
+        <div class="hero-badge">
+            <span class="google-rating">4.6</span>
+            <span class="google-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="google-text">150+ Google Reviews</span>
         </div>
         <div class="scroll-indicator">
             <span>Scroll to discover</span>

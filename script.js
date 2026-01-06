@@ -1,16 +1,19 @@
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+const navMenuLeft = document.querySelector('.nav-menu-left');
+const navMenuRight = document.querySelector('.nav-menu-right');
 
 hamburger.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
+    navMenuLeft.classList.toggle('active');
+    navMenuRight.classList.toggle('active');
     hamburger.classList.toggle('active');
 });
 
 // Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-menu a').forEach(link => {
+document.querySelectorAll('.nav-menu-left a, .nav-menu-right a').forEach(link => {
     link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
+        navMenuLeft.classList.remove('active');
+        navMenuRight.classList.remove('active');
         hamburger.classList.remove('active');
     });
 });
@@ -107,11 +110,11 @@ window.addEventListener('scroll', () => {
         const sectionHeight = section.offsetHeight;
         const sectionTop = section.offsetTop - 100;
         const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-menu a[href="#${sectionId}"]`);
+        const navLink = document.querySelector(`.nav-menu-left a[href="#${sectionId}"]`);
 
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             if (navLink && !navLink.classList.contains('cta-button')) {
-                document.querySelectorAll('.nav-menu a').forEach(link => {
+                document.querySelectorAll('.nav-menu-left a').forEach(link => {
                     link.classList.remove('active');
                 });
                 navLink.classList.add('active');

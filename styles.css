@@ -72,12 +72,56 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
     gap: 12px;
+}
+
+.nav-menu-left {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-menu-left a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 15px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-menu-left a:hover {
+    color: var(--primary-color);
+}
+
+.nav-menu-left a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-menu-left a:hover::after {
+    width: 100%;
+}
+
+.nav-menu-right {
+    display: flex;
+    align-items: center;
 }
 
 .logo-image {
@@ -87,7 +131,7 @@ body {
 }
 
 .logo-text {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Cormorant Garamond', serif;
     font-size: 24px;
     font-weight: 700;
     letter-spacing: 2px;
@@ -170,31 +214,20 @@ body {
     overflow: hidden;
 }
 
-/* Blurred Video Background Layer - extends to edges */
-.hero-video-bg {
+/* Hero Background Image */
+.hero-image-bg {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    transform: translate(-50%, -50%) scale(2.5);
-    object-fit: cover;
-    filter: blur(50px) brightness(0.7);
     z-index: 0;
 }
 
-/* Main Video Layer - crisp center */
-.hero-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.hero-image-bg img {
     width: 100%;
     height: 100%;
-    transform: translate(-50%, -50%) scale(1.3);
     object-fit: cover;
-    z-index: 1;
-    mask-image: radial-gradient(ellipse 65% 55% at center, black 30%, transparent 75%);
-    -webkit-mask-image: radial-gradient(ellipse 65% 55% at center, black 30%, transparent 75%);
 }
 
 
@@ -314,6 +347,40 @@ body {
     margin: 0 auto;
     position: relative;
     animation: scrollDown 2s infinite;
+}
+
+/* Google Reviews Badge */
+.hero-badge {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px 24px;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+}
+
+.google-rating {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.google-stars {
+    color: #FBBC04;
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.google-text {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-left: 4px;
 }
 
 /* ===================================
@@ -837,22 +904,31 @@ body {
    =================================== */
 
 @media (max-width: 968px) {
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
+    .nav-menu-left,
+    .nav-menu-right {
+        display: none;
+    }
+
+    .nav-menu-left.active,
+    .nav-menu-right.active {
+        display: flex;
         flex-direction: column;
+        position: fixed;
+        left: 0;
+        top: 70px;
         background: var(--white);
         width: 100%;
         text-align: center;
-        transition: 0.3s;
         box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
         padding: 40px 0;
         gap: 20px;
+        z-index: 999;
     }
 
-    .nav-menu.active {
+    .logo {
+        position: relative;
         left: 0;
+        transform: none;
     }
 
     .hamburger {
