@@ -1,38 +1,8 @@
-// Mobile Navigation Toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenuLeft = document.querySelector('.nav-menu-left');
-const navMenuRight = document.querySelector('.nav-menu-right');
-
-hamburger.addEventListener('click', () => {
-    navMenuLeft.classList.toggle('active');
-    navMenuRight.classList.toggle('active');
-    hamburger.classList.toggle('active');
-});
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-menu-left a, .nav-menu-right a').forEach(link => {
-    link.addEventListener('click', () => {
-        navMenuLeft.classList.remove('active');
-        navMenuRight.classList.remove('active');
-        hamburger.classList.remove('active');
-    });
-});
-
-// Navbar scroll effect
-let lastScroll = 0;
-const navbar = document.querySelector('.navbar');
+// Navbar scroll effect — toggle .scrolled class
+const navbar = document.getElementById('navbar');
 
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-
-    // Add shadow on scroll
-    if (currentScroll > 50) {
-        navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-    } else {
-        navbar.style.boxShadow = 'none';
-    }
-
-    lastScroll = currentScroll;
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
 });
 
 // Smooth scroll for anchor links
@@ -89,17 +59,6 @@ featureCards.forEach((card, index) => {
     card.style.transitionDelay = `${index * 0.15}s`;
 });
 
-// Parallax effect for hero section
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero-content');
-
-    if (hero && scrolled < window.innerHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-        hero.style.opacity = 1 - (scrolled / window.innerHeight);
-    }
-});
-
 // Active navigation highlight on scroll
 const sections = document.querySelectorAll('section[id]');
 
@@ -110,11 +69,11 @@ window.addEventListener('scroll', () => {
         const sectionHeight = section.offsetHeight;
         const sectionTop = section.offsetTop - 100;
         const sectionId = section.getAttribute('id');
-        const navLink = document.querySelector(`.nav-menu-left a[href="#${sectionId}"]`);
+        const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
 
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            if (navLink && !navLink.classList.contains('cta-button')) {
-                document.querySelectorAll('.nav-menu-left a').forEach(link => {
+            if (navLink) {
+                document.querySelectorAll('.nav-links a').forEach(link => {
                     link.classList.remove('active');
                 });
                 navLink.classList.add('active');
@@ -131,6 +90,20 @@ window.addEventListener('load', () => {
         document.body.style.opacity = '1';
     }, 100);
 });
+
+// Phone number spam protection — assembled client-side so bots can't scrape it
+(function() {
+    var el = document.querySelector('.phone-number span[data-p1]');
+    if (el) {
+        var num = el.dataset.p1 + el.dataset.p2 + el.dataset.p3;
+        el.textContent = num.replace(/(\d{4})(\d{3})(\d{3})/, '$1 $2 $3');
+    }
+    var callBtn = document.querySelector('.call-btn');
+    if (callBtn && el) {
+        var num = el.dataset.p1 + el.dataset.p2 + el.dataset.p3;
+        callBtn.href = 'tel:' + num;
+    }
+})();
 
 // Image placeholder hover effect
 const imagePlaceholders = document.querySelectorAll('.image-placeholder');

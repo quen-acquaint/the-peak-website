@@ -3,142 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Peak Hong Kong Cafe | Sydney's Most Authentic Cha Chaan Teng</title>
-    <meta name="description" content="Experience Sydney's most authentic Cha Chaan Teng. Traditional Hong Kong cafe serving fresh, heritage-style dishes in the heart of Sydney.">
+    <title>The Peak Hong Kong Cafe | Sydney's Most Authentic Cha Chaan Teng in Glebe</title>
+    <meta name="description" content="The Peak Hong Kong Cafe in Glebe, Sydney. Authentic Cha Chaan Teng serving handmade soups, silk stocking milk tea, polo buns, and classic Hong Kong dishes. Est. 2020.">
+    <meta name="keywords" content="cha chaan teng sydney, hong kong cafe sydney, the peak hong kong cafe, glebe restaurant, hong kong food sydney, milk tea sydney, polo bun sydney">
+    <link rel="canonical" href="https://thepeakhkcafe.com.au/">
+    <meta name="theme-color" content="#1A0E08">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <!-- Open Graph / Facebook / iMessage -->
+    <meta property="og:type" content="restaurant">
+    <meta property="og:title" content="The Peak Hong Kong Cafe | Sydney's Most Authentic Cha Chaan Teng">
+    <meta property="og:description" content="A Hong Kong dining tradition, reimagined for Sydney. Classic Cha Chaan Teng recipes passed down through generations, served in Glebe.">
+    <meta property="og:image" content="https://thepeakhkcafe.com.au/logo.png">
+    <meta property="og:url" content="https://thepeakhkcafe.com.au/">
+    <meta property="og:site_name" content="The Peak Hong Kong Cafe">
+    <meta property="og:locale" content="en_AU">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Peak Hong Kong Cafe | Sydney's Authentic Cha Chaan Teng">
+    <meta name="twitter:description" content="A Hong Kong dining tradition, reimagined for Sydney. Classic Cha Chaan Teng recipes in Glebe.">
+    <meta name="twitter:image" content="https://thepeakhkcafe.com.au/logo.png">
+
+    <!-- Structured Data - Restaurant -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Restaurant",
+        "name": "The Peak Hong Kong Cafe",
+        "description": "Sydney's most authentic Cha Chaan Teng serving traditional Hong Kong cafe dishes in Glebe.",
+        "image": "https://thepeakhkcafe.com.au/logo.png",
+        "url": "https://thepeakhkcafe.com.au/",
+        "telephone": "+61402421162",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "25A Glebe Point Rd",
+            "addressLocality": "Glebe",
+            "addressRegion": "NSW",
+            "postalCode": "2037",
+            "addressCountry": "AU"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -33.8794,
+            "longitude": 151.1868
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "11:30",
+            "closes": "21:00"
+        },
+        "servesCuisine": ["Hong Kong", "Cantonese", "Cha Chaan Teng"],
+        "priceRange": "$$",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.6",
+            "reviewCount": "150"
+        },
+        "foundingDate": "2020",
+        "sameAs": []
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500;600&family=Noto+Serif+TC:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <ul class="nav-menu-left">
+    <nav class="navbar" id="navbar">
+        <div class="nav-left">
+            <a href="#" class="nav-logo">
+                <div class="nav-logo-icon">
+                    <img src="logo.png" alt="The Peak Logo" class="nav-logo-icon-img">
+                </div>
+                <span class="nav-logo-text">The Peak</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#menu">Menu</a></li>
                 <li><a href="#story">Our Story</a></li>
                 <li><a href="#heritage">Heritage</a></li>
-                <li><a href="#menu">Menu</a></li>
+                <li><a href="#visit">Gallery</a></li>
             </ul>
-            <div class="logo">
-                <img src="logo.png" alt="The Peak Hong Kong Cafe Logo" class="logo-image">
-                <span class="logo-text">THE PEAK</span>
-            </div>
-            <div class="nav-menu-right">
-                <a href="#visit" class="cta-button">Visit Us</a>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        </div>
+        <a href="#visit" class="nav-cta">Contact Us</a>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-image-bg">
-            <img src="images/ThePeakHero.jpg" alt="The Peak Hong Kong Cafe">
-        </div>
+        <!-- Background Video -->
+        <video class="hero-bg" autoplay muted loop playsinline>
+            <source src="Generated_File_March_29__2026_-_5_35PM.mp4" type="video/mp4">
+        </video>
         <div class="hero-overlay"></div>
+        <div class="hero-light"></div>
+        <div class="hero-grain"></div>
+
+        <!-- Main Content -->
         <div class="hero-content">
-            <span class="hero-subtitle">Sydney's Most Authentic</span>
-            <h1 class="hero-title">Cha Chaan Teng Experience</h1>
-            <p class="hero-description">Where Hong Kong's culinary heritage meets Sydney. Traditional flavors, fresh ingredients, authentic culture.</p>
-            <div class="hero-buttons">
-                <a href="#menu" class="btn btn-primary">Explore Our Menu</a>
-                <a href="#visit" class="btn btn-secondary">Find Us</a>
+            <div class="hero-eyebrow">Est. 2020 · Sydney</div>
+            <h1 class="hero-title">The Art of<br><em>Cha Chaan Teng</em></h1>
+            <span class="sr-only">The Peak Hong Kong Cafe - Authentic Cha Chaan Teng in Glebe, Sydney</span>
+            <div class="hero-chinese">茶餐廳</div>
+            <div class="hero-divider"></div>
+            <p class="hero-description">
+                A Hong Kong dining tradition, reimagined for Sydney. Classic recipes passed down through generations, served in a space that feels like home.
+            </p>
+            <div class="hero-actions">
+                <a href="#menu" class="hero-btn-primary">
+                    <span>Explore Our Menu</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#visit" class="hero-btn-secondary">Find Us</a>
             </div>
         </div>
-        <div class="hero-badge">
-            <span class="google-rating">4.6</span>
-            <span class="google-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-            <span class="google-text">150+ Google Reviews</span>
-        </div>
-        <div class="scroll-indicator">
-            <span>Scroll to discover</span>
-            <div class="scroll-arrow"></div>
-        </div>
-    </section>
 
-    <!-- Our Story Section -->
-    <section id="story" class="story-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Our Story</span>
-                <h2 class="section-title">Bringing Hong Kong's Heart to Sydney</h2>
+        <!-- Right side info -->
+        <div class="hero-side">
+            <div class="hero-badge">
+                <div class="hero-badge-rating">4.6</div>
+                <div class="hero-badge-info">
+                    <div class="hero-badge-stars">★★★★★</div>
+                    <div class="hero-badge-label">150+ Google Reviews</div>
+                </div>
             </div>
-            <div class="story-content">
-                <div class="story-text">
-                    <p class="lead">The Peak Hong Kong Cafe is more than a restaurant—it's a portal to the vibrant streets of Hong Kong, where the aroma of milk tea and freshly baked pineapple buns fills the air.</p>
-                    <p>Founded with a deep respect for tradition, we've recreated the authentic Cha Chaan Teng experience that has been the heartbeat of Hong Kong culture for generations. Every dish we serve honors time-tested recipes while using only the freshest ingredients.</p>
-                    <p>Our kitchen is led by chefs who grew up in Hong Kong's Cha Chaan Tengs, ensuring that every bite transports you to the bustling tea houses of Mong Kok, the cozy corners of Sheung Wan, and the vibrant energy of Tsim Sha Tsui.</p>
-                    <blockquote>
-                        "We don't just serve food—we preserve a way of life, a cultural treasure that connects generations."
-                    </blockquote>
-                </div>
-                <div class="story-image">
-                    <div class="image-placeholder">
-                        <span>Authentic Cha Chaan Teng Interior</span>
-                    </div>
-                </div>
+            <div class="hero-hours">
+                Open Daily<br>
+                11:30 am — 9:00 pm
             </div>
         </div>
-    </section>
 
-    <!-- Heritage Section -->
-    <section id="heritage" class="heritage-section">
-        <div class="container">
-            <div class="section-header centered">
-                <span class="section-label">Cha Chaan Teng Heritage</span>
-                <h2 class="section-title">A Living Piece of Hong Kong History</h2>
-                <p class="section-intro">The Cha Chaan Teng is Hong Kong's soul—a unique fusion of Eastern and Western culinary traditions born in the post-war era.</p>
-            </div>
+        <!-- Decorative vertical Chinese text -->
+        <div class="hero-vertical">香港茶餐廳</div>
 
-            <div class="heritage-timeline">
-                <div class="timeline-item">
-                    <div class="timeline-icon">1950s</div>
-                    <div class="timeline-content">
-                        <h3>Birth of an Icon</h3>
-                        <p>Cha Chaan Tengs emerged as affordable alternatives to expensive Western restaurants, offering locals a taste of both worlds—Chinese ingredients prepared with Western techniques.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-icon">1960s-80s</div>
-                    <div class="timeline-content">
-                        <h3>Cultural Revolution</h3>
-                        <p>These tea houses became community hubs where workers, families, and friends gathered. Signature dishes like French toast, milk tea, and baked pork chop rice became cultural icons.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-icon">Today</div>
-                    <div class="timeline-content">
-                        <h3>Preserving Tradition</h3>
-                        <p>We bring this rich heritage to Sydney, maintaining authentic preparation methods while honoring the spirit of Hong Kong's beloved tea houses.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="heritage-features">
-                <div class="feature-card">
-                    <div class="feature-icon">🍞</div>
-                    <h3>Traditional Techniques</h3>
-                    <p>From our signature milk tea steeped to perfection to our golden-crisp French toast, every dish follows authentic methods passed down through generations.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🌿</div>
-                    <h3>Fresh Ingredients</h3>
-                    <p>We source the finest local ingredients daily, ensuring every meal captures the fresh, vibrant flavors that define true Cha Chaan Teng cuisine.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🏮</div>
-                    <h3>Authentic Atmosphere</h3>
-                    <p>Our space recreates the nostalgic ambiance of classic Hong Kong tea houses—from the décor to the service style.</p>
-                </div>
-            </div>
+        <!-- Scroll indicator -->
+        <div class="hero-scroll">
+            <span class="hero-scroll-text">Discover</span>
+            <div class="hero-scroll-line"></div>
         </div>
     </section>
 
@@ -157,9 +170,10 @@
                         <img src="images/Pineapple Bun.png" alt="Polo Bun - Pineapple Bun with Butter">
                     </div>
                     <div class="menu-details">
-                        <h3>Polo Bun (菠蘿包)</h3>
+                        <h3 class="menu-name">Polo Bun</h3>
+                        <span class="menu-chinese">菠蘿包</span>
                         <p>Freshly baked pineapple bun with a crispy, sweet crust and soft interior, served with a thick slice of cold butter</p>
-                        <span class="menu-badge">Customer Favorite</span>
+                        <span class="menu-badge">Guest Favourite</span>
                     </div>
                 </div>
 
@@ -168,7 +182,8 @@
                         <img src="images/milktea.png" alt="Silk Stocking Milk Tea - Hong Kong Style">
                     </div>
                     <div class="menu-details">
-                        <h3>Silk Stocking Milk Tea (絲襪奶茶)</h3>
+                        <h3 class="menu-name">Silk Stocking Milk Tea</h3>
+                        <span class="menu-chinese">絲襪奶茶</span>
                         <p>Our signature blend of Ceylon tea leaves steeped through cloth filters, creating a smooth, rich beverage that's the heart of every Cha Chaan Teng</p>
                         <span class="menu-badge">Signature</span>
                     </div>
@@ -179,9 +194,10 @@
                         <img src="images/French%20Toast.png" alt="HK French Toast - Golden-fried with butter and syrup">
                     </div>
                     <div class="menu-details">
-                        <h3>HK French Toast (西多士)</h3>
-                        <p>Golden-fried toast with peanut butter filling, topped with syrup and a pat of butter—crispy outside, fluffy inside</p>
-                        <span class="menu-badge">Classic</span>
+                        <h3 class="menu-name">HK French Toast</h3>
+                        <span class="menu-chinese">西多士</span>
+                        <p>Golden-fried toast with peanut butter filling, topped with syrup and a pat of butter. Crispy outside, fluffy inside</p>
+                        <span class="menu-badge">Heritage</span>
                     </div>
                 </div>
 
@@ -190,7 +206,8 @@
                         <img src="images/Porkchop.png" alt="Baked Pork Chop Rice - Hong Kong Style">
                     </div>
                     <div class="menu-details">
-                        <h3>Baked Pork Chop Rice (焗豬扒飯)</h3>
+                        <h3 class="menu-name">Baked Pork Chop Rice</h3>
+                        <span class="menu-chinese">焗豬扒飯</span>
                         <p>Tender pork chop over tomato fried rice, blanketed in melted cheese and baked to perfection</p>
                         <span class="menu-badge">Must Try</span>
                     </div>
@@ -201,7 +218,8 @@
                         <img src="images/sataybeef.jpg" alt="Satay Beef Noodles - Hong Kong Style">
                     </div>
                     <div class="menu-details">
-                        <h3>Satay Beef Noodles (沙嗲牛肉麵)</h3>
+                        <h3 class="menu-name">Satay Beef Noodles</h3>
+                        <span class="menu-chinese">沙嗲牛肉麵</span>
                         <p>Nissin instant noodles served in our 12-hour slow-cooked broth with mouth-watering satay beef</p>
                         <span class="menu-badge">Traditional</span>
                     </div>
@@ -212,16 +230,120 @@
                         <img src="images/iceLT.png" alt="Iced Lemon Tea - Hong Kong Style">
                     </div>
                     <div class="menu-details">
-                        <h3>Iced Lemon Tea (凍檸茶)</h3>
-                        <p>Refreshing black tea served over ice with fresh lemon—a beloved Hong Kong café staple that's tangy, sweet, and perfectly cooling</p>
+                        <h3 class="menu-name">Iced Lemon Tea</h3>
+                        <span class="menu-chinese">凍檸茶</span>
+                        <p>Refreshing black tea served over ice with fresh lemon. A beloved Hong Kong café staple that's tangy, sweet, and perfectly cooling</p>
                         <span class="menu-badge">Refreshing</span>
                     </div>
                 </div>
             </div>
 
             <div class="menu-cta">
-                <p>Experience the full authentic menu in person</p>
-                <a href="#visit" class="btn btn-primary">Visit Us Today</a>
+                <h2 class="menu-cta-title">Explore the Full Menu</h2>
+                <p>Authentic dishes, traditional recipes, and all prices</p>
+                <a href="menu.html" class="menu-cta-btn">View Full Menu &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="story-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Story</span>
+                <h2 class="section-title">Bringing Hong Kong's Heart to Sydney</h2>
+            </div>
+            <div class="story-content">
+                <div class="story-text">
+                    <p class="lead">The Peak Hong Kong Cafe is more than a restaurant. It's a portal to the vibrant streets of Hong Kong, where the aroma of milk tea and freshly baked pineapple buns fills the air.</p>
+                    <p>Founded with a deep respect for tradition, we've recreated the authentic Cha Chaan Teng experience that has been the heartbeat of Hong Kong culture for generations. Every dish we serve honors time-tested recipes while using only the freshest ingredients.</p>
+                    <p>Our kitchen is led by chefs who grew up in Hong Kong's Cha Chaan Tengs, ensuring that every bite transports you to the bustling tea houses of Mong Kok, the cozy corners of Sheung Wan, and the vibrant energy of Tsim Sha Tsui.</p>
+                    <p>Every soup we serve is handmade and slow-cooked for over 12 hours, drawing out deep, rich flavours that guarantee the freshest, most authentic taste in every bowl.</p>
+                    <blockquote>
+                        "We don't just serve food, we preserve a way of life, a cultural treasure that connects generations."
+                    </blockquote>
+                </div>
+                <div class="story-image">
+                    <img src="FullSizeRender.jpeg" alt="Authentic Cha Chaan Teng dishes at The Peak - noodles, milk tea, and lemon tea">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage Section -->
+    <section id="heritage" class="heritage-section">
+        <div class="container">
+            <div class="section-header centered">
+                <span class="section-label">Cha Chaan Teng Heritage</span>
+                <h2 class="section-title">A Living Piece of Hong Kong History</h2>
+                <p class="section-intro">The Cha Chaan Teng is Hong Kong's soul: a unique fusion of Eastern and Western culinary traditions born in the post-war era.</p>
+            </div>
+
+            <div class="heritage-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon timeline-icon-img">
+                        <img src="Generated Image March 31, 2026 - 4_01PM.jpg" alt="1950s Hong Kong">
+                        <span>1950s</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Birth of an Icon</h3>
+                        <p>Cha Chaan Tengs emerged as affordable alternatives to expensive Western restaurants, offering locals a taste of both worlds, with Chinese ingredients prepared with Western techniques.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon timeline-icon-img">
+                        <img src="Generated Image March 31, 2026 - 4_08PM.jpg" alt="1960s-80s Hong Kong">
+                        <span>1960s-80s</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Cultural Revolution</h3>
+                        <p>These tea houses became community hubs where workers, families, and friends gathered. Signature dishes like French toast, milk tea, and baked pork chop rice became cultural icons.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon timeline-icon-img">
+                        <img src="image copy.png" alt="Preserving Tradition Today">
+                        <span>Today</span>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Preserving Tradition</h3>
+                        <p>We bring this rich heritage to Sydney, maintaining authentic preparation methods while honoring the spirit of Hong Kong's beloved tea houses.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="heritage-features">
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="hong kong tradition.jpeg" alt="Traditional Techniques">
+                    </div>
+                    <div class="feature-body">
+                        <h3>Traditional Techniques</h3>
+                        <p>From our signature milk tea steeped to perfection to our golden-crisp French toast, every dish follows authentic methods passed down through generations.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="wet market.jpeg" alt="Fresh Ingredients">
+                    </div>
+                    <div class="feature-body">
+                        <h3>Fresh Ingredients</h3>
+                        <p>We source the finest local ingredients daily, ensuring every meal captures the fresh, vibrant flavors that define true Cha Chaan Teng cuisine.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-image">
+                        <img src="hong kong cup.webp" alt="Authentic Atmosphere">
+                    </div>
+                    <div class="feature-body">
+                        <h3>Authentic Atmosphere</h3>
+                        <p>Our space recreates the nostalgic ambiance of classic Hong Kong tea houses, from the décor to the service style.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -248,13 +370,12 @@
 
                         <div class="info-block">
                             <h4>Contact</h4>
-                            <p>Phone: [Your Phone]<br>
-                            Email: [Your Email]</p>
+                            <p class="phone-number">Phone: <span data-p1="0402" data-p2="421" data-p3="162"></span></p>
                         </div>
                     </div>
 
                     <div class="visit-buttons">
-                        <a href="tel:[phone]" class="btn btn-primary">Call Now</a>
+                        <a href="#" class="btn btn-primary call-btn">Call Now</a>
                         <a href="https://www.google.com/maps/dir//25A+Glebe+Point+Rd,+Glebe+NSW+2037" class="btn btn-secondary" target="_blank">Get Directions</a>
                     </div>
                 </div>

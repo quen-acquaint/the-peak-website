@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Peak — Hong Kong Café</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500;600&family=Noto+Serif+TC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --warm-black: #1a1410;
+    --deep-brown: #2a2018;
+    --amber: #c8956c;
+    --gold: #d4a574;
+    --cream: #f5efe6;
+    --warm-white: #faf7f2;
+    --coral-accent: #d4705a;
+    --muted-sage: #8a9080;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-chinese: 'Noto Serif TC', serif;
+    --font-body: 'Instrument Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  
+  body {
+    background: var(--warm-black);
+    color: var(--cream);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ─── NAVBAR ─── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding: 0 clamp(24px, 4vw, 64px);
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.5s ease, backdrop-filter 0.5s ease, border-color 0.5s ease;
+    border-bottom: 1px solid transparent;
+  }
+
+  nav.scrolled {
+    background: rgba(26, 20, 16, 0.85);
+    backdrop-filter: blur(20px) saturate(1.4);
+    -webkit-backdrop-filter: blur(20px) saturate(1.4);
+    border-bottom-color: rgba(200, 149, 108, 0.15);
+  }
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.75;
+    transition: opacity 0.3s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover { opacity: 1; }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--cream);
+  }
+
+  .nav-logo-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--amber), var(--coral-accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+  }
+
+  .nav-logo-text {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .nav-cta {
+    padding: 10px 28px;
+    background: transparent;
+    border: 1px solid rgba(212, 165, 116, 0.5);
+    color: var(--gold);
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-decoration: none;
+  }
+
+  .nav-cta:hover {
+    background: var(--gold);
+    color: var(--warm-black);
+    border-color: var(--gold);
+  }
+
+  /* ─── HERO ─── */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    overflow: hidden;
+  }
+
+  /* Background image with warm overlay */
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg,
+        rgba(26, 20, 16, 0.55) 0%,
+        rgba(26, 20, 16, 0.30) 35%,
+        rgba(26, 20, 16, 0.35) 65%,
+        rgba(26, 20, 16, 0.85) 100%
+      ),
+      linear-gradient(90deg,
+        rgba(26, 20, 16, 0.6) 0%,
+        transparent 50%
+      );
+  }
+
+  /* Warm light leak effect */
+  .hero-light {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 70%;
+    height: 80%;
+    background: radial-gradient(ellipse, rgba(200, 149, 108, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+    animation: lightPulse 8s ease-in-out infinite alternate;
+  }
+
+  @keyframes lightPulse {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+  }
+
+  /* Grain texture overlay */
+  .hero-grain {
+    position: absolute;
+    inset: 0;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 128px;
+    pointer-events: none;
+  }
+
+  /* Content layout — left-aligned editorial style */
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 clamp(32px, 8vw, 140px);
+    max-width: 800px;
+    gap: 0;
+  }
+
+  /* Stagger animation */
+  .hero-content > * {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+  }
+
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    animation-delay: 0.3s;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(52px, 7.5vw, 96px);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -1px;
+    color: var(--warm-white);
+    margin-bottom: 12px;
+    animation-delay: 0.5s;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--gold);
+  }
+
+  .hero-chinese {
+    font-family: var(--font-chinese);
+    font-size: clamp(20px, 2.5vw, 30px);
+    font-weight: 300;
+    color: rgba(212, 165, 116, 0.6);
+    letter-spacing: 8px;
+    margin-bottom: 32px;
+    animation-delay: 0.65s;
+  }
+
+  .hero-divider {
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    margin-bottom: 28px;
+    animation-delay: 0.75s;
+  }
+
+  .hero-description {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.75;
+    color: rgba(245, 239, 230, 0.7);
+    max-width: 480px;
+    margin-bottom: 40px;
+    font-weight: 400;
+    animation-delay: 0.85s;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    animation-delay: 1s;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 40px;
+    background: linear-gradient(135deg, var(--amber), var(--coral-accent));
+    color: var(--warm-white);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--coral-accent), var(--amber));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(200, 149, 108, 0.3);
+  }
+
+  .btn-primary:hover::before { opacity: 1; }
+
+  .btn-primary span { position: relative; z-index: 1; }
+
+  .btn-primary svg {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease;
+  }
+
+  .btn-primary:hover svg { transform: translateX(4px); }
+
+  .btn-secondary {
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    position: relative;
+    padding-bottom: 4px;
+  }
+
+  .btn-secondary::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--cream);
+    opacity: 0.3;
+    transition: opacity 0.3s;
+  }
+
+  .btn-secondary:hover { opacity: 1; }
+  .btn-secondary:hover::after { opacity: 0.6; }
+
+  /* ─── RIGHT SIDE DETAILS ─── */
+  .hero-side {
+    position: absolute;
+    right: clamp(24px, 4vw, 64px);
+    bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 28px;
+    z-index: 10;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.3s forwards;
+  }
+
+  .hero-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    background: rgba(26, 20, 16, 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+  }
+
+  .hero-badge-rating {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--gold);
+  }
+
+  .hero-badge-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .hero-badge-stars {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  .hero-badge-label {
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  .hero-hours {
+    text-align: right;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    line-height: 1.8;
+  }
+
+  /* ─── BOTTOM SCROLL INDICATOR ─── */
+  .hero-scroll {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.5s forwards;
+  }
+
+  .hero-scroll-text {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.4;
+  }
+
+  .hero-scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(180deg, var(--gold), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.3; transform: scaleY(0.6); transform-origin: top; }
+    50% { opacity: 0.8; transform: scaleY(1); }
+  }
+
+  /* ─── DECORATIVE VERTICAL TEXT ─── */
+  .hero-vertical {
+    position: absolute;
+    left: clamp(24px, 4vw, 64px);
+    bottom: 100px;
+    z-index: 10;
+    writing-mode: vertical-rl;
+    font-family: var(--font-chinese);
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 8px;
+    color: rgba(212, 165, 116, 0.15);
+    opacity: 0;
+    animation: fadeUp 1s ease 1.4s forwards;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-side { display: none; }
+    .hero-vertical { display: none; }
+
+    .hero-content {
+      padding: 0 24px;
+      justify-content: flex-end;
+      padding-bottom: 120px;
+    }
+
+    .hero-title {
+      font-size: 42px;
+    }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ─── NAVBAR ─── -->
+<nav id="navbar">
+  <div class="nav-left">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">峰</div>
+      <span class="nav-logo-text">The Peak</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">Our Story</a></li>
+      <li><a href="#">Heritage</a></li>
+      <li><a href="#">Menu</a></li>
+      <li><a href="#">Gallery</a></li>
+    </ul>
+  </div>
+  <a href="#" class="nav-cta">Reserve a Table</a>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <!-- Background Video -->
+  <video class="hero-bg" autoplay muted loop playsinline>
+    <source src="Generated_File_March_29__2026_-_5_35PM.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-light"></div>
+  <div class="hero-grain"></div>
+
+  <!-- Main Content -->
+  <div class="hero-content">
+    <div class="hero-eyebrow">Est. 2024 · Sydney</div>
+    <h1 class="hero-title">The Art of<br><em>Cha Chaan Teng</em></h1>
+    <div class="hero-chinese">茶餐廳</div>
+    <div class="hero-divider"></div>
+    <p class="hero-description">
+      A Hong Kong dining tradition, reimagined for Sydney. Classic recipes passed down through generations, served in a space that feels like home.
+    </p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary">
+        <span>Explore Our Menu</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+      <a href="#" class="btn-secondary">Find Us</a>
+    </div>
+  </div>
+
+  <!-- Right side info -->
+  <div class="hero-side">
+    <div class="hero-badge">
+      <div class="hero-badge-rating">4.6</div>
+      <div class="hero-badge-info">
+        <div class="hero-badge-stars">★★★★★</div>
+        <div class="hero-badge-label">150+ Google Reviews</div>
+      </div>
+    </div>
+    <div class="hero-hours">
+      Open Daily<br>
+      11:30 am — 9:00 pm
+    </div>
+  </div>
+
+  <!-- Decorative vertical Chinese text -->
+  <div class="hero-vertical">香港茶餐廳</div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll">
+    <span class="hero-scroll-text">Discover</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<script>
+  // Navbar scroll effect
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 50);
+  });
+</script>
+
+</body>
+</html>
