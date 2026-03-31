@@ -52,3 +52,11 @@ build/
 # Temporary files
 *.tmp
 *.temp
+
+# Claude Code
+CLAUDE.md
+.claude/
+
+# Screenshots (dev only)
+Screenshot*.png
+thepeakhlh.html

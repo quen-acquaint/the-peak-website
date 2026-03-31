@@ -26,8 +26,8 @@
     --deep-brown-bg: #1A0E08;
     --warm-gold: #C8956A;
     --text-body: #4A3828;
-    --text-muted: #7A6A5A;
-    --text-hint: #9A8A7A;
+    --text-muted: #5C4A3A;
+    --text-hint: #7A6A5A;
     --text-light-warm: #F5E6D3;
     --text-light-muted: #B8A08A;
     --border-warm: rgba(200, 149, 106, 0.2);
@@ -972,7 +972,7 @@ body {
     display: block;
     font-family: 'Jost', sans-serif;
     font-size: 13px;
-    color: var(--text-hint);
+    color: var(--text-muted);
     margin-top: 2px;
     margin-bottom: 8px;
 }
@@ -989,7 +989,7 @@ body {
 .menu-badge {
     display: inline-block;
     background: transparent;
-    color: #A67B5B;
+    color: #8B6340;
     border-radius: 0;
     border: none;
     border-bottom: 1px solid rgba(200, 149, 106, 0.4);
@@ -1082,7 +1082,7 @@ body {
     margin-bottom: 40px;
 }
 
-.info-block h4 {
+.info-block h3 {
     font-family: var(--font-heading);
     font-size: 20px;
     color: var(--warm-gold);
@@ -1152,14 +1152,14 @@ body {
     margin-bottom: 40px;
 }
 
-.footer-section h3 {
+.footer-section h2 {
     font-family: var(--font-heading);
     font-size: 24px;
     margin-bottom: 15px;
     letter-spacing: 2px;
 }
 
-.footer-section h4 {
+.footer-section h3 {
     font-size: 16px;
     margin-bottom: 15px;
     font-weight: 600;
