@@ -58,7 +58,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Add fade-in effect to elements
-const fadeElements = document.querySelectorAll('.feature-card, .menu-item, .timeline-item, .story-content, .visit-content');
+const fadeElements = document.querySelectorAll('.feature-card, .menu-item, .timeline-item, .story-content, .visit-content, .article-section');
 fadeElements.forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';

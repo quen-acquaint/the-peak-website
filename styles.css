@@ -1300,6 +1300,210 @@ body {
 }
 
 /* ===================================
+   BREADCRUMBS
+   =================================== */
+
+.breadcrumb {
+    padding: 20px 0;
+    font-family: var(--font-body-new);
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+}
+
+.breadcrumb a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: var(--warm-gold);
+}
+
+.breadcrumb .separator {
+    color: var(--warm-gold);
+    margin: 0 8px;
+}
+
+/* ===================================
+   ARTICLE / CONTENT PAGES
+   =================================== */
+
+.article-hero {
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    background: var(--warm-black);
+}
+
+.article-hero img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.article-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(26, 20, 16, 0.3) 0%,
+        rgba(26, 20, 16, 0.7) 100%
+    );
+    pointer-events: none;
+}
+
+.article-hero-content {
+    position: relative;
+    z-index: 10;
+    padding: 0 clamp(32px, 8vw, 140px) 60px;
+    max-width: 900px;
+}
+
+.article-hero-content h1 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--warm-white);
+    margin-bottom: 16px;
+}
+
+.article-hero-content .article-subtitle {
+    font-family: var(--font-body-new);
+    font-size: 16px;
+    color: rgba(245, 239, 230, 0.7);
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.article-section {
+    padding: var(--section-padding);
+}
+
+.article-body {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.article-body h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+    line-height: 1.3;
+}
+
+.article-body h3 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-top: 40px;
+    margin-bottom: 16px;
+}
+
+.article-body p {
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-body);
+    margin-bottom: 24px;
+}
+
+.article-body .chinese-inline {
+    font-family: var(--font-chinese);
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+.article-body a {
+    color: var(--warm-gold);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(200, 149, 106, 0.3);
+    transition: border-color 0.3s ease;
+}
+
+.article-body a:hover {
+    border-color: var(--warm-gold);
+}
+
+.article-body blockquote {
+    margin: 40px 0;
+    padding: 30px;
+    background: var(--bg-parchment);
+    border-left: 4px solid var(--warm-gold);
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-style: italic;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.article-image {
+    margin: 40px 0;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.article-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 20, 16, 0.15);
+    pointer-events: none;
+}
+
+.article-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.article-cta-section {
+    text-align: center;
+    padding: 80px 20px;
+    background: var(--bg-parchment);
+    border-radius: 8px;
+    margin: 60px auto;
+    max-width: 780px;
+}
+
+.article-cta-section h2 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 400;
+    color: #1A0E08;
+    margin-bottom: 16px;
+}
+
+.article-cta-section p {
+    font-family: var(--font-body-new);
+    font-size: 16px;
+    color: var(--text-muted);
+    font-weight: 300;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.article-cta-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ===================================
    ANIMATIONS
    =================================== */
 
@@ -1380,6 +1584,15 @@ body {
     .nav-cta { display: none; }
     .hero-side { display: none; }
     .hero-vertical { display: none; }
+
+    .article-hero {
+        height: 40vh;
+        min-height: 300px;
+    }
+
+    .article-hero-content {
+        padding: 0 24px 40px;
+    }
 
     .hamburger { display: flex; }
 

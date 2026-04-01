@@ -17,7 +17,9 @@
     <meta property="og:type" content="restaurant">
     <meta property="og:title" content="The Peak Hong Kong Cafe | Sydney's Most Authentic Cha Chaan Teng">
     <meta property="og:description" content="A Hong Kong dining tradition, reimagined for Sydney. Classic Cha Chaan Teng recipes passed down through generations, served in Glebe.">
-    <meta property="og:image" content="https://thepeakhkcafe.com.au/logo.png">
+    <meta property="og:image" content="https://thepeakhkcafe.com.au/images-optimized/logo.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://thepeakhkcafe.com.au/">
     <meta property="og:site_name" content="The Peak Hong Kong Cafe">
     <meta property="og:locale" content="en_AU">
@@ -26,7 +28,14 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="The Peak Hong Kong Cafe | Sydney's Authentic Cha Chaan Teng">
     <meta name="twitter:description" content="A Hong Kong dining tradition, reimagined for Sydney. Classic Cha Chaan Teng recipes in Glebe.">
-    <meta name="twitter:image" content="https://thepeakhkcafe.com.au/logo.png">
+    <meta name="twitter:image" content="https://thepeakhkcafe.com.au/images-optimized/logo.webp">
+    <!-- TODO: Create og-share.webp (1200x630) branded share image and update OG/Twitter image tags -->
+
+    <!-- Geo Meta Tags -->
+    <meta name="geo.region" content="AU-NSW">
+    <meta name="geo.placename" content="Glebe, Sydney">
+    <meta name="geo.position" content="-33.8794;151.1868">
+    <meta name="ICBM" content="-33.8794, 151.1868">
 
     <!-- Structured Data - Restaurant -->
     <script type="application/ld+json">
@@ -34,8 +43,15 @@
         "@context": "https://schema.org",
         "@type": "Restaurant",
         "name": "The Peak Hong Kong Cafe",
-        "description": "Sydney's most authentic Cha Chaan Teng serving traditional Hong Kong cafe dishes in Glebe.",
-        "image": "https://thepeakhkcafe.com.au/logo.png",
+        "alternateName": ["The Peak HK Cafe", "峰", "The Peak 茶餐廳"],
+        "description": "Sydney's most authentic Cha Chaan Teng (茶餐廳) serving traditional Hong Kong cafe dishes in Glebe. Silk stocking milk tea, polo buns, HK French toast, baked pork chop rice, and more.",
+        "image": [
+            "https://thepeakhkcafe.com.au/images-optimized/pineapple-bun.webp",
+            "https://thepeakhkcafe.com.au/images-optimized/milktea.webp",
+            "https://thepeakhkcafe.com.au/images-optimized/french-toast.webp",
+            "https://thepeakhkcafe.com.au/images-optimized/fullsizerender.webp"
+        ],
+        "logo": "https://thepeakhkcafe.com.au/images-optimized/logo.webp",
         "url": "https://thepeakhkcafe.com.au/",
         "telephone": "+61402421162",
         "address": {
@@ -57,19 +73,29 @@
             "opens": "11:30",
             "closes": "21:00"
         },
-        "servesCuisine": ["Hong Kong", "Cantonese", "Cha Chaan Teng"],
+        "servesCuisine": ["Hong Kong", "Cantonese", "Cha Chaan Teng", "Chinese"],
         "priceRange": "$$",
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": "4.6",
-            "reviewCount": "150"
+            "reviewCount": "150",
+            "bestRating": "5"
         },
         "foundingDate": "2020",
-        "sameAs": ["https://www.instagram.com/thepeakhkcafe/", "https://www.facebook.com/thepeakhkcafe"]
+        "hasMenu": {
+            "@type": "Menu",
+            "url": "https://thepeakhkcafe.com.au/menu.html",
+            "name": "The Peak Hong Kong Cafe Menu"
+        },
+        "acceptsReservations": false,
+        "sameAs": [
+            "https://www.instagram.com/thepeakhkcafe/",
+            "https://www.facebook.com/thepeakhkcafe"
+        ]
     }
     </script>
 
-    <link rel="preload" as="video" href="Generated_File_March_29__2026_-_5_35PM.mp4" type="video/mp4">
+    <link rel="preload" as="video" href="hero-milk-tea-pour.mp4" type="video/mp4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Instrument+Sans:wght@400;500;600&family=Noto+Serif+TC:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -116,7 +142,7 @@
     <section class="hero">
         <!-- Background Video -->
         <video class="hero-bg" autoplay muted loop playsinline aria-hidden="true">
-            <source src="Generated_File_March_29__2026_-_5_35PM.mp4" type="video/mp4">
+            <source src="hero-milk-tea-pour.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="hero-overlay"></div>
@@ -181,7 +207,7 @@
             <div class="menu-grid">
                 <div class="menu-item">
                     <div class="menu-image">
-                        <img src="images-optimized/pineapple-bun.webp" alt="Polo Bun - Pineapple Bun with Butter" loading="lazy" width="600" height="450">
+                        <img src="images-optimized/pineapple-bun.webp" alt="Polo Bun (菠蘿包) — freshly baked Hong Kong pineapple bun with butter at The Peak, Glebe" loading="lazy" width="600" height="450">
                     </div>
                     <div class="menu-details">
                         <h3 class="menu-name">Polo Bun</h3>
@@ -193,7 +219,7 @@
 
                 <div class="menu-item">
                     <div class="menu-image">
-                        <img src="images-optimized/milktea.webp" alt="Silk Stocking Milk Tea - Hong Kong Style" loading="lazy" width="600" height="450">
+                        <img src="images-optimized/milktea.webp" alt="Silk Stocking Milk Tea (絲襪奶茶) — traditional Hong Kong-style milk tea at The Peak Cha Chaan Teng, Sydney" loading="lazy" width="600" height="450">
                     </div>
                     <div class="menu-details">
                         <h3 class="menu-name">Silk Stocking Milk Tea</h3>
@@ -205,7 +231,7 @@
 
                 <div class="menu-item">
                     <div class="menu-image">
-                        <img src="images-optimized/french-toast.webp" alt="HK French Toast - Golden-fried with butter and syrup" loading="lazy" width="600" height="450">
+                        <img src="images-optimized/french-toast.webp" alt="Hong Kong French Toast (西多士) — golden-fried with peanut butter and syrup at The Peak, Glebe" loading="lazy" width="600" height="450">
                     </div>
                     <div class="menu-details">
                         <h3 class="menu-name">HK French Toast</h3>
@@ -217,7 +243,7 @@
 
                 <div class="menu-item">
                     <div class="menu-image">
-                        <img src="images-optimized/porkchop.webp" alt="Baked Pork Chop Rice - Hong Kong Style" loading="lazy" width="600" height="450">
+                        <img src="images-optimized/porkchop.webp" alt="Baked Pork Chop Rice (焗豬扒飯) — Hong Kong-style with melted cheese at The Peak Cha Chaan Teng" loading="lazy" width="600" height="450">
                     </div>
                     <div class="menu-details">
                         <h3 class="menu-name">Baked Pork Chop Rice</h3>
@@ -229,7 +255,7 @@
 
                 <div class="menu-item">
                     <div class="menu-image">
-                        <img src="images-optimized/sataybeef.webp" alt="Satay Beef Noodles - Hong Kong Style" loading="lazy" width="600" height="450">
+                        <img src="images-optimized/sataybeef.webp" alt="Satay Beef Noodles (沙嗲牛肉麵) — Nissin noodles in 12-hour broth at The Peak Hong Kong Cafe" loading="lazy" width="600" height="450">
                     </div>
                     <div class="menu-details">
                         <h3 class="menu-name">Satay Beef Noodles</h3>
@@ -241,7 +267,7 @@
 
                 <div class="menu-item">
                     <div class="menu-image">
-                        <img src="images-optimized/icelt.webp" alt="Iced Lemon Tea - Hong Kong Style" loading="lazy" width="600" height="450">
+                        <img src="images-optimized/icelt.webp" alt="Iced Lemon Tea (凍檸茶) — refreshing Hong Kong-style iced tea at The Peak, Sydney" loading="lazy" width="600" height="450">
                     </div>
                     <div class="menu-details">
                         <h3 class="menu-name">Iced Lemon Tea</h3>
@@ -276,9 +302,10 @@
                     <blockquote>
                         "We don't just serve food, we preserve a way of life, a cultural treasure that connects generations."
                     </blockquote>
+                    <a href="hong-kong-food-sydney.html" class="menu-cta-btn" style="margin-top: 30px; display: inline-block;">Explore Hong Kong Food in Sydney &rarr;</a>
                 </div>
                 <div class="story-image">
-                    <img src="images-optimized/fullsizerender.webp" alt="Authentic Cha Chaan Teng dishes at The Peak - noodles, milk tea, and lemon tea" loading="lazy" width="600" height="500">
+                    <img src="images-optimized/fullsizerender.webp" alt="Authentic Cha Chaan Teng dishes — noodles, milk tea, and lemon tea at The Peak Hong Kong Cafe, Glebe" loading="lazy" width="600" height="500">
                 </div>
             </div>
         </div>
@@ -296,7 +323,7 @@
             <div class="heritage-timeline">
                 <div class="timeline-item">
                     <div class="timeline-icon timeline-icon-img">
-                        <img src="images-optimized/gen-1950s.webp" alt="1950s Hong Kong" loading="lazy" width="120" height="120">
+                        <img src="images-optimized/gen-1950s.webp" alt="1950s Hong Kong — the birth of Cha Chaan Teng café culture" loading="lazy" width="120" height="120">
                         <span>1950s</span>
                     </div>
                     <div class="timeline-content">
@@ -307,7 +334,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-icon timeline-icon-img">
-                        <img src="images-optimized/gen-1960s.webp" alt="1960s-80s Hong Kong" loading="lazy" width="120" height="120">
+                        <img src="images-optimized/gen-1960s.webp" alt="1960s–80s Hong Kong — Cha Chaan Teng becomes a cultural icon" loading="lazy" width="120" height="120">
                         <span>1960s-80s</span>
                     </div>
                     <div class="timeline-content">
@@ -318,7 +345,7 @@
 
                 <div class="timeline-item">
                     <div class="timeline-icon timeline-icon-img">
-                        <img src="images-optimized/image-copy.webp" alt="Preserving Tradition Today" loading="lazy" width="120" height="120">
+                        <img src="images-optimized/image-copy.webp" alt="Preserving Hong Kong Cha Chaan Teng traditions today at The Peak, Sydney" loading="lazy" width="120" height="120">
                         <span>Today</span>
                     </div>
                     <div class="timeline-content">
@@ -331,7 +358,7 @@
             <div class="heritage-features">
                 <div class="feature-card">
                     <div class="feature-image">
-                        <img src="images-optimized/hong-kong-tradition.webp" alt="Traditional Techniques" loading="lazy" width="600" height="450">
+                        <img src="images-optimized/hong-kong-tradition.webp" alt="Traditional Hong Kong cooking techniques — milk tea straining and French toast preparation" loading="lazy" width="600" height="450">
                     </div>
                     <div class="feature-body">
                         <h3>Traditional Techniques</h3>
@@ -341,7 +368,7 @@
 
                 <div class="feature-card">
                     <div class="feature-image">
-                        <img src="images-optimized/wet-market.webp" alt="Fresh Ingredients" loading="lazy" width="600" height="450">
+                        <img src="images-optimized/wet-market.webp" alt="Fresh ingredients sourced daily for authentic Cha Chaan Teng cuisine" loading="lazy" width="600" height="450">
                     </div>
                     <div class="feature-body">
                         <h3>Fresh Ingredients</h3>
@@ -351,13 +378,17 @@
 
                 <div class="feature-card">
                     <div class="feature-image">
-                        <img src="images-optimized/hong-kong-cup.webp" alt="Authentic Atmosphere" loading="lazy" width="600" height="450">
+                        <img src="images-optimized/hong-kong-cup.webp" alt="Authentic Hong Kong Cha Chaan Teng atmosphere and décor at The Peak" loading="lazy" width="600" height="450">
                     </div>
                     <div class="feature-body">
                         <h3>Authentic Atmosphere</h3>
                         <p>Our space recreates the nostalgic ambiance of classic Hong Kong tea houses, from the décor to the service style.</p>
                     </div>
                 </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="cha-chaan-teng-sydney.html" class="menu-cta-btn">Discover the Full Story of Cha Chaan Teng &rarr;</a>
             </div>
         </div>
     </section>
@@ -426,6 +457,9 @@
                         <li><a href="#heritage">Heritage</a></li>
                         <li><a href="#menu">Menu</a></li>
                         <li><a href="#visit">Visit Us</a></li>
+                        <li><a href="cha-chaan-teng-sydney.html">Cha Chaan Teng Guide</a></li>
+                        <li><a href="hong-kong-food-sydney.html">Hong Kong Food Sydney</a></li>
+                        <li><a href="hong-kong-cafe-glebe.html">Visit Glebe</a></li>
                     </ul>
                 </div>
 
@@ -439,7 +473,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 The Peak Hong Kong Cafe. All rights reserved.</p>
+                <p>&copy; 2026 The Peak Hong Kong Cafe. All rights reserved.</p>
             </div>
         </div>
     </footer>
