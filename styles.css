@@ -155,6 +155,16 @@ body {
     font-weight: 400;
     letter-spacing: 3px;
     text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.nav-logo-sub {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    opacity: 0.6;
+    font-weight: 300;
 }
 
 .nav-links {
@@ -1200,6 +1210,42 @@ body {
     color: var(--text-body);
     font-size: 16px;
     line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    font-family: var(--font-body-new);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--warm-gold);
+    color: #fff;
+    border: 1px solid var(--warm-gold);
+}
+
+.btn-primary:hover {
+    background: #b07f55;
+    border-color: #b07f55;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-body);
+    border: 1px solid var(--border-warm-md);
+}
+
+.btn-secondary:hover {
+    border-color: var(--warm-gold);
+    color: var(--warm-gold);
 }
 
 .visit-buttons {
