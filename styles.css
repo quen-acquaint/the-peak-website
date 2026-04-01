@@ -712,6 +712,7 @@ body {
 }
 
 .section-intro {
+    font-family: var(--font-body-new);
     font-size: 18px;
     color: var(--text-muted);
     line-height: 1.6;
@@ -749,11 +750,13 @@ body {
 }
 
 .story-text {
+    font-family: var(--font-body-new);
     font-size: 17px;
     color: var(--text-body);
 }
 
 .story-text .lead {
+    font-family: var(--font-body-new);
     font-size: 22px;
     font-weight: 500;
     color: var(--text-dark);
@@ -905,6 +908,7 @@ body {
 }
 
 .timeline-content p {
+    font-family: var(--font-body-new);
     color: var(--text-body);
     font-size: 17px;
     line-height: 1.7;
@@ -972,7 +976,7 @@ body {
 }
 
 .feature-card p {
-    font-family: 'Jost', sans-serif;
+    font-family: var(--font-body-new);
     font-size: 13px;
     font-weight: 300;
     line-height: 1.65;
@@ -1170,6 +1174,7 @@ body {
 }
 
 .visit-info .lead {
+    font-family: var(--font-body-new);
     font-size: 18px;
     color: var(--text-body);
     line-height: 1.7;
@@ -1191,6 +1196,7 @@ body {
 }
 
 .info-block p {
+    font-family: var(--font-body-new);
     color: var(--text-body);
     font-size: 16px;
     line-height: 1.6;
