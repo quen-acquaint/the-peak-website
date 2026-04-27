@@ -153,3 +153,35 @@ window.addEventListener('scroll', () => {
     const scrolled = (window.pageYOffset / windowHeight) * 100;
     scrollProgress.style.width = scrolled + '%';
 });
+
+// Hero live open/closed status — Sydney time (Australia/Sydney)
+(function initHeroStatus() {
+    const els = document.querySelectorAll('[data-hero-status]');
+    if (!els.length) return;
+
+    const OPEN_MIN  = 11 * 60 + 30; // 11:30
+    const CLOSE_MIN = 21 * 60;      // 21:00
+
+    function sydneyMinutes() {
+        const parts = new Intl.DateTimeFormat('en-GB', {
+            timeZone: 'Australia/Sydney',
+            hour: '2-digit', minute: '2-digit', hour12: false,
+        }).formatToParts(new Date());
+        const h = parseInt(parts.find(p => p.type === 'hour').value, 10);
+        const m = parseInt(parts.find(p => p.type === 'minute').value, 10);
+        return h * 60 + m;
+    }
+
+    function update() {
+        const mins = sydneyMinutes();
+        const isOpen = mins >= OPEN_MIN && mins < CLOSE_MIN;
+        els.forEach(el => {
+            el.dataset.status = isOpen ? 'open' : 'closed';
+            const textEl = el.querySelector('.hero-status-text');
+            if (textEl) textEl.textContent = isOpen ? 'Open Now' : 'Closed';
+        });
+    }
+
+    update();
+    setInterval(update, 60000);
+})();

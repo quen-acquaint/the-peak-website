@@ -611,6 +611,46 @@ body {
     color: var(--cream);
 }
 
+/* ─── LIVE OPEN/CLOSED STATUS PILL ─── */
+.hero-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(26, 20, 16, 0.6);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    font-family: var(--font-body-new);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cream);
+    white-space: nowrap;
+    width: fit-content;
+}
+
+.hero-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #7BC47F;
+    box-shadow: 0 0 8px rgba(123, 196, 127, 0.6);
+    flex-shrink: 0;
+}
+
+.hero-status[data-status="closed"] .hero-status-dot {
+    background: var(--coral-accent);
+    box-shadow: 0 0 8px rgba(212, 112, 90, 0.6);
+}
+
+.hero-status-sep { opacity: 0.5; }
+
+.hero-status--mobile  { display: none; }
+.hero-status--desktop { display: inline-flex; margin-bottom: 4px; }
+
 /* ─── DECORATIVE VERTICAL TEXT ─── */
 .hero-vertical {
     position: absolute;
@@ -1655,6 +1695,13 @@ body {
     .hero-side { display: none; }
     .hero-vertical { display: none; }
 
+    .hero-status--mobile {
+        display: inline-flex;
+        align-self: center;
+        margin-bottom: 16px;
+    }
+    .hero-status--desktop { display: none; }
+
     .article-hero {
         height: 40vh;
         min-height: 300px;
@@ -1677,8 +1724,12 @@ body {
     }
 
     .hero-actions {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 16px 20px;
+    }
+
+    .hero-btn-primary {
+        padding: 14px 28px;
     }
 }
 
