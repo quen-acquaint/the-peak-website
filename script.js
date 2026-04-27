@@ -143,7 +143,7 @@ scrollProgress.style.position = 'fixed';
 scrollProgress.style.top = '0';
 scrollProgress.style.left = '0';
 scrollProgress.style.height = '3px';
-scrollProgress.style.background = 'linear-gradient(to right, #E85D55, #FF8B85)';
+scrollProgress.style.background = 'linear-gradient(to right, #7A1F1A, #5E1714)';
 scrollProgress.style.zIndex = '9999';
 scrollProgress.style.transition = 'width 0.1s ease';
 document.body.appendChild(scrollProgress);
