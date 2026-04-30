@@ -110,20 +110,6 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
-// Phone number spam protection — assembled client-side so bots can't scrape it
-(function() {
-    var el = document.querySelector('.phone-number span[data-p1]');
-    if (el) {
-        var num = el.dataset.p1 + el.dataset.p2 + el.dataset.p3;
-        el.textContent = num.replace(/(\d{4})(\d{3})(\d{3})/, '$1 $2 $3');
-    }
-    var callBtn = document.querySelector('.call-btn');
-    if (callBtn && el) {
-        var num = el.dataset.p1 + el.dataset.p2 + el.dataset.p3;
-        callBtn.href = 'tel:' + num;
-    }
-})();
-
 // Image placeholder hover effect
 const imagePlaceholders = document.querySelectorAll('.image-placeholder');
 imagePlaceholders.forEach(placeholder => {

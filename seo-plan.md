@@ -24,7 +24,7 @@ Tick items as you complete them. Numbered references (e.g. *W1.2*) point to the 
 - [x] **W1.1a — Install Google Search Console** *(done)*
 - [x] **W1.1b — Install GA4** *(done — measurement ID `G-RQZVJZ2L6E`, gtag installed on all 6 HTML pages 30 Apr 2026)*
 - [ ] **W1.1c — Connect GA4 ↔ GSC; submit `sitemap.xml` in GSC**
-- [ ] **W1.2 — Un-obfuscate phone number for click-to-call** (replace `data-p1/p2/p3` with plain `<a href="tel:+61402421162">`)
+- [x] **W1.2 — Un-obfuscate phone number for click-to-call** *(done 1 May 2026 — replaced `data-p1/p2/p3` spans with `<a href="tel:+61402421162">` on `index.html` + `hong-kong-cafe-glebe.html`. Also fixed the `Call Now` button which had `href="#"`. Removed the JS reassembly block from `script.js`. Added `data-track="click_to_call"` attrs for W6.2 GA4 event wiring. Spam mitigation moved to: DNC Register registration + carrier-level filters.)*
 - [x] **W1.3 — Tombstone-redirect `the-peak-menu-april26.html` → `/menu.html`** *(done 30 Apr 2026 — file replaced with meta-refresh + canonical + noindex + JS fallback + GA4. Sitemap unchanged. Hard-delete after 90 days of zero traffic.)*
 - [ ] **W2.1 — Fix TripAdvisor "Bondi Junction → Glebe" listing**
 - [ ] **W2.2 — Fix DoorDash "Bondi Junction → Glebe" tag**
