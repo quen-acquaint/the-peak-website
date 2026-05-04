@@ -70,7 +70,7 @@ Tick items as you complete them. Numbered references (e.g. *W1.2*) point to the 
 
 ### Week 1–4 — Schema & on-page polish
 
-- [ ] **W1.4 — Add Menu + MenuItem JSON-LD** to `menu.html`
+- [x] **W1.4 — Add Menu + MenuItem JSON-LD** to `menu.html` *(done 2 May 2026 — full Menu schema with 12 sections × 87 items, Hot/Iced offers arrays for HK drinks, Small/Large for Italian coffees, allergen notes for nut items, images on 5 dishes. Updated `index.html` Restaurant.hasMenu to reference by @id.)*
 - [ ] **W1.5 — Add FAQPage JSON-LD** to `cha-chaan-teng-sydney.html` + new section on `index.html`
 - [ ] **W1.7 — Hero video LCP optimisation** (`preload="metadata"`, or swap to webp poster + click-to-play)
 - [ ] **W1.8 — Self-canonical on every page** (one page is missing it)
