@@ -43,7 +43,7 @@ Tick items as you complete them. Numbered references (e.g. *W1.2*) point to the 
 - [ ] **W5a.3 — Email SBS Food editor** to request website hyperlink on existing article
 - [ ] **W5a.3 — Email SMH Good Food editor** to request website hyperlink on existing article
 - [ ] **W5a.3 — Email SMH Traveller editor** to request website hyperlink on existing article
-- [ ] **W3a.P0 — Ship `hong-kong-macaroni-soup-sydney.html`** citing both 2025 articles (the topic-authority page)
+- [x] **W3a.P0 — Ship `hong-kong-macaroni-soup-sydney.html`** *(done 6 May 2026 — 913-word page citing SBS Food + SMH Traveller + SMH Good Food, with Article + BreadcrumbList + FAQPage schema, press strip, pull-quote, FAQ. Sitemap updated; internal link added from `cha-chaan-teng-sydney.html`. P0 complete.)*
 - [ ] **W3a.P1 — Ship `silk-stocking-milk-tea-sydney.html`**
 - [ ] **W3a.P1 — Ship `pineapple-bun-sydney.html`**
 - [ ] **W3b.P1 — Ship `hong-kong-cafe-near-university-of-sydney.html`**
